@@ -1,4 +1,6 @@
 #include<iostream>
+#include <limits.h>
+
 
 int *readNumbers() {
     int *numbers = new int[10];
@@ -10,16 +12,17 @@ int *readNumbers() {
     return numbers;
 }
 
+
 int secondSmallestSum(int *numbers, int length) {
-    int smallestSum = INT_MAX;
-    int secondSmallestSum = INT_MAX;
-    
+    int smallestSum = 0;
+    int secondSmallestSum = 0;
+
     for (int start = 0; start < length; start++) {
         int currentSum = 0;
-        
+
         for (int end = start; end < length; end++) {
             currentSum += numbers[end];
-            
+
             if (currentSum < smallestSum) {
                 secondSmallestSum = smallestSum;
                 smallestSum = currentSum;
@@ -28,6 +31,11 @@ int secondSmallestSum(int *numbers, int length) {
             }
         }
     }
-    
+
     return secondSmallestSum;
 }
+
+
+
+
+
