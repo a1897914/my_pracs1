@@ -18,8 +18,12 @@ bool AssetPortfolio::has_asset(std::string product) {
     return false;
 }
 
-std::vector<Asset> AssetPortfolio::get_assets() {
-    return assets;
+Asset* AssetPortfolio::get_assets() {
+    Asset* assetsArray = new Asset[assets.size()];
+    for (int i = 0; i < assets.size(); i++) {
+        assetsArray[i] = assets[i];
+    }
+    return assetsArray;
 }
 
 bool AssetPortfolio::add_asset(Asset new_asset) {
