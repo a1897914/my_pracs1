@@ -4,7 +4,11 @@
 int main() {
 
     AirVehicle a(1000);
-    a.set_fuel(100);
+    float fuel;
+    std::cout << "Enter fuel value: ";
+    std::cin >> fuel;
+    a.set_fuel(fuel);
+    std::cout << "Fuel set to: " << a.get_fuel() << std::endl;
 
     std::cout << "Weight: " << a.get_weight() << std::endl;
 
