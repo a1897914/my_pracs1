@@ -8,8 +8,6 @@ int main() {
     std::cin >> fuel;
     a.set_fuel(fuel);
 
-    float currentFuel = a.get_fuel();
-    std::cout << "Current fuel: " << currentFuel << std::endl;
 
     std::cout << "Weight: " << a.get_weight() << std::endl;
 
