@@ -3,11 +3,11 @@
 
 int main() {
     Airplane a(10000, 100);
-    float fuel;
-    std::cout << "Enter fuel value: ";
-    std::cin >> fuel;
-    a.set_fuel(fuel);
-    std::cout << "Fuel: " << a.get_fuel() << std::endl;
+    AirVehicle a;
+    a.set_fuel(100);
+
+    float currentFuel = a.get_fuel();
+    std::cout << "Current fuel: " << currentFuel << std::endl;
 
     std::cout << "Weight: " << a.get_weight() << std::endl;
 

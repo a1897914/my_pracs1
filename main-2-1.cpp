@@ -3,12 +3,11 @@
 
 int main() {
     Helicopter h(5690, "Heli1");
-    float fuel;
-    std::cout << "Enter fuel value: ";
-    std::cin >> fuel;
-    h.set_fuel(fuel);
-    std::cout << "Fuel: " << h.get_fuel() << std::endl;
+    AirVehicle h;
+    h.set_fuel(100);
 
+    float currentFuel = h.get_fuel();
+    std::cout << "Current fuel: " << currentFuel << std::endl;
 
     std::cout << "Weight: " << h.get_weight() << std::endl;
     std::cout << "Number of Flights: " << h.get_numberOfFlights() << std::endl;
