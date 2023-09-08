@@ -3,7 +3,6 @@
 
 int main() {
     Helicopter h(5690, "Heli1");
-    AirVehicle h;
     h.set_fuel(100);
 
     float currentFuel = h.get_fuel();

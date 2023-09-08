@@ -4,7 +4,6 @@
 int main() {
 
     AirVehicle a(1000);
-    AirVehicle a;
     a.set_fuel(100);
 
     float currentFuel = a.get_fuel();
