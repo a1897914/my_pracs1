@@ -2,12 +2,14 @@
 #include "AirVehicle.h"
 
 int main() {
+
     AirVehicle a(1000);
+    a.set_fuel(100);
 
     std::cout << "Weight: " << a.get_weight() << std::endl;
 
     std::cout << "Fuel: " << a.get_fuel() << std::endl;
-    
+
     std::cout << "Number of Flights: " << a.get_numberOfFlights() << std::endl;
 
     a.refuel();
@@ -15,6 +17,9 @@ int main() {
 
     a.fly(10, 60);
     std::cout << "Number of Flights after flying: " << a.get_numberOfFlights() << std::endl;
+
+    float currentFuel = a.get_fuel();
+    std::cout << "Current fuel: " << currentFuel << "%" << std::endl;
 
     return 0;
 }

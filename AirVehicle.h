@@ -1,8 +1,7 @@
 #ifndef AIRVEHICLE_H
 #define AIRVEHICLE_H
 
-class AirVehicle
-{
+class AirVehicle {
 private:
     int weight;
     float fuel;
