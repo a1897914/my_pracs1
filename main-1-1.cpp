@@ -13,13 +13,12 @@ int main() {
     std::cout << "Number of Flights: " << a.get_numberOfFlights() << std::endl;
 
     a.refuel();
-    std::cout << "Fuel after refueling: " << a.get_fuel() << std::endl;
+    std::cout << "Fuel after refueling: " << a.get_fuel() << "%" << std::endl;
 
     a.fly(10, 60);
     std::cout << "Number of Flights after flying: " << a.get_numberOfFlights() << std::endl;
 
-    float currentFuel = a.get_fuel();
-    std::cout << "Current fuel: " << currentFuel << "%" << std::endl;
+  
 
     return 0;
 }
