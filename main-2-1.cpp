@@ -3,7 +3,10 @@
 
 int main() {
     Helicopter h(5690, "Heli1");
-    h.set_fuel(100);
+    float fuel;
+    std::cout << "Enter fuel value: ";
+    std::cin >> fuel;
+    h.set_fuel(fuel);
 
     float currentFuel = h.get_fuel();
     std::cout << "Current fuel: " << currentFuel << std::endl;
