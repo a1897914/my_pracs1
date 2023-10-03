@@ -2,29 +2,23 @@
 #define INVOICE_H
 
 
+
 #include <string>
 
 class Invoice {
 public:
-    Invoice(std::string invoiceId) : invoiceId(invoiceId), dollarsOwed(0) {}
+    Invoice(std::string invoiceId);
 
-    void addServiceCost(int costDollars) {
-        if (costDollars > 0) {
-            dollarsOwed += costDollars;
-        }
-    }
+    void addServiceCost(int costDollars);
 
-    int getDollarsOwed() const {
-        return dollarsOwed;
-    }
+    int getDollarsOwed() const;
 
-    std::string getInvoiceId() const {
-        return invoiceId;
-    }
+    std::string getInvoiceId() const;
 
 private:
     std::string invoiceId;
     int dollarsOwed;
 };
+
 
 #endif
