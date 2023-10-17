@@ -3,7 +3,7 @@
 Opponents::Opponents() { }
 
 // Parameterised constructor 
-Opponents::Opponents(std::string name, int age, std::string location, std::string relationship) : name(name), age(age), location(location), relationship(relationship) {
+Opponents::Opponents(std::string name, int age, std::string location) : name(name), age(age), location(location){
 
 }
 
@@ -21,23 +21,15 @@ int Opponents::get_opponentAge() const {
     return age;
 }
 
-void Opponents::get_opponentAge(int newAge) {
+void Opponents::set_opponentAge(int newAge) {
     age = newAge;
 }
 
 // Get and Set for location
-std::string Opponents::get_opponentLocation() const {
+std::string Opponents::get_location() const {
     return location;
 }
 
-void Opponents::set_opponentLocation(std::string newLocation) {
+void Opponents::set_location(std::string newLocation) {
     location = newLocation;
-}
-
-std::string Opponents::get_relationship() const {
-    return relationship;
-}
-
-void Opponents::set_relationship(std::string newRelationship) {
-    relationship = newRelationship;
 }

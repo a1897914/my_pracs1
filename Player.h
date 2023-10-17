@@ -16,7 +16,7 @@ class Player {
 
         std::string get_playerName() const;
         void set_playerName(std::string newName);
-        
+
         int get_playerAge() const;
         void set_playerAge(int newAge);
 

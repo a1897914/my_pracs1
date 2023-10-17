@@ -8,10 +8,6 @@ int Defend::calculateTotalDefend() {
     return totalDefendValue;
 }
 
-//int Defend::get_totalDefend() const {
-//    return totalDefendValue;
-//}
-
 void Defend::setInitialDefend() {
     const_cast<Pokemon&>(*pokemon).set_initialDefend(totalDefendValue);
 }

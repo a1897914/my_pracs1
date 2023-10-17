@@ -16,7 +16,6 @@ class Defend {
         Defend(const Pokemon* pokemon);
 
         int calculateTotalDefend();
-//        int get_totalDefend() const;
         void setInitialDefend();
 };
 

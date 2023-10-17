@@ -3,57 +3,50 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Pokemon.h"
 #include "Dice.h"
 
 
 class BattleSystem {
-public:
-    static void performBattle(Pokemon* attacker, Pokemon* defender, Dice& dice) {
+    public: 
+        
+    public:
+        static int performBattle(Pokemon* attacker, Pokemon* defender, Dice& dice) {
 
-        int agileResult = dice.rollAgileDice();
-        int attackResult = dice.rollAttackDice();
-        int defendResult = dice.rollDefendDice();
+            int attackResult = dice.rollAttackDice();
+            int defendResult = dice.rollDefendDice();
 
-        int get_attackResult = attackResult;
-        int get_defendResult = defendResult;
+            int get_attackResult = attackResult;
+            int get_defendResult = defendResult;
 
-        std::cout << attacker->get_name() << "'s Attack: " << get_attackResult << '\n';
-        std::cout << defender->get_name() << "'s Defend: " << get_defendResult << '\n';
+            std::cout << attacker->get_name() << "'s Attack: " << get_attackResult << '\n';
+            std::cout << defender->get_name() << "'s Defend: " << get_defendResult << '\n';
 
-        int damage = attackResult - defendResult;
-        if (damage > 0) {
-            BattleSystem::takeDamage(defender, damage); // 使用takeDamage方法
-            std::cout << attacker->get_name() << " attacks " << defender->get_name() << " for " << damage << " damage.\n";
-        } else {
-            std::cout << attacker->get_name() << " attacks " << defender->get_name() << ", but it doesn't do any damage.\n";
+            int damage = attackResult - defendResult;
+            if (damage > 0) {
+                // BattleSystem::takeDamage(defender, damage); 
+                std::cout << attacker->get_name() << " use " << attacker->get_Skills() << " to attacks " << defender->get_name() << " for " << damage << " damage.\n";
+                return damage;
+            } else {
+                std::cout << attacker->get_name() << " use " << attacker->get_Skills() << " attacks " << defender->get_name() << ", but it doesn't do any damage.\n";
+                damage = 0;
+                return damage;
+           }
         }
 
+        static int takeDamage(Pokemon* target, int damage, int currentHealth) {
+            int newHealth = currentHealth - damage;
+            if (newHealth <= 0) {
+                newHealth = 0; 
+                std::cout << target->get_name() << " have not HP left!" << '\n';
+                return newHealth;
+            } else {
+                std::cout << target->get_name() << " takes " << damage << " damage. Remaining HP: " << newHealth << '\n';
+                return newHealth;
+            }
         
-    }
-
-    static void takeDamage(Pokemon* target, int damage) {
-    int currentHealth = target->get_totalPokemonBloodVolume();
-    int newHealth = currentHealth - damage;
-
-    if (newHealth < 0) {
-        newHealth = 0; 
-    }
-
-    target->set_totalPokemonBloodVolume(newHealth);
-
-    std::cout << target->get_name() << " takes " << damage << " damage. Remaining HP: " << newHealth << '\n';
-
-    if (newHealth <= 0) {
-        std::cout << target->get_name() << " has fainted!\n";
-    }
-}
-
-
-
-
+        }
 };
 
-
-
-#endif
+#endif // BATTLESYSTEM_H

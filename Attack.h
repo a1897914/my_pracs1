@@ -16,7 +16,6 @@ class Attack{
         Attack(const Pokemon* pokemon);
 
         int calculateTotalAttack();
-        // int get_totalAttack() const;
         void setInitialAttack();
 };
 

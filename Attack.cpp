@@ -10,10 +10,6 @@ int Attack::calculateTotalAttack() {
     return totalAttackValue;
 }
 
-//int Attack::get_totalAttack() const {
-//    return totalAttackValue;
-//}
-
 void Attack::setInitialAttack() {
     const_cast<Pokemon&>(*pokemon).set_initialAttack(totalAttackValue);
 }

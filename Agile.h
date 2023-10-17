@@ -16,7 +16,6 @@ class Agile {
         Agile(const Pokemon* pokemon);
 
         int calculateTotalAgile();
-//        int get_totalAgile() const;
         void setInitialAgile();
 };
 

@@ -9,10 +9,10 @@ class Opponents {
         std::string name;
         int age;
         std::string location;
-        std::string relationship;
+
     public:
         Opponents(); 
-        Opponents(std::string name, int age, std::string location, std::string relationship);
+        Opponents(std::string name, int age, std::string location);
 
         std::string get_opponentName() const;
         void set_opponentName(std::string newName);
@@ -22,9 +22,6 @@ class Opponents {
 
         std::string get_location() const;
         void set_location(std::string newLocation);
-
-        std::string get_relationship() const;
-        void set_relationship(std::string newRelationship);
 };
 
 #endif // OPPONENTS_H

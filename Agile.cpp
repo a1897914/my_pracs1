@@ -10,10 +10,6 @@ int Agile::calculateTotalAgile() {
     return totalAgileValue;
 }
 
-// int Agile::get_totalAgile() const {
-//    return totalAgileValue;
-//}
-
 void Agile::setInitialAgile() {
     const_cast<Pokemon&>(*pokemon).set_initialAgile(totalAgileValue);
 }
