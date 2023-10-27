@@ -2,17 +2,20 @@
 #define SNARE_H
 
 #include "Spot.h"
+#include "Influence.h"
 
 
-class Snare : public Spot {
+class Snare : public Spot, public Influence {
 public:
-    Snare(int x, int y) : Spot(x, y, 'C') {}
-    void move(int dx, int dy) {
-        std::tuple<int, int> loc = location();
-        int x = std::get<0>(loc);
-        int y = std::get<1>(loc);
-        setLoc(x + dx, y + dy);
+    Snare(int x, int y) : Spot(x, y, 'S'), operative(true) {}
+    bool isOperative() { return operative; }
+    void implement(Spot& spot) override {
+        spot.setCategory('S');
+        operative = false;
     }
+
+private:
+    bool operative;
 };
 
 #endif
