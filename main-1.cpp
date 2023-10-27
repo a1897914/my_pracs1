@@ -4,9 +4,9 @@
 #include <iostream>
 
 int main() {
-    Spot Spot(0, 0, 'A');
-    auto pos = Spot.location();
-    std::cout << "Position: (" << std::get<0>(pos) << ", " << std::get<1>(pos) << "), Type: " << Spot.category() << std::endl;
+    Spot spot(0, 0, 'A');
+    auto loc = spot.getLoc();
+    std::cout << "Location: (" << std::get<0>(loc) << ", " << std::get<1>(loc) << "), Category: " << spot.getCategory() << std::endl;
     
     auto loc1 = Assists::createRandomLoc(10, 10);
     auto loc2 = Assists::createRandomLoc(10, 10);

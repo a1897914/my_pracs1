@@ -5,16 +5,15 @@
 
 class Spot {
 public:
-    Spot(int x, int y, char type) : position(std::make_tuple(x, y)), type(type) {}
-    virtual ~Spot() {}  
-    std::tuple<int, int> location() { return position; }
-    char category() { return type; }
-    void setLoc(int x, int y) { position = std::make_tuple(x, y); }
-    void setCategory(char type) { this->type = type; }
+    Spot(int x, int y, char category) : location(std::make_tuple(x, y)), category(category) {}
+    std::tuple<int, int> getLoc() { return location; }
+    char getCategory() { return category; }
+    void setLoc(int x, int y) { location = std::make_tuple(x, y); }
+    void setCategory(char category) { this->category = category; }
 
 private:
-    std::tuple<int, int> position;
-    char type;
+    std::tuple<int, int> location;
+    char category;
 };
 
 #endif
